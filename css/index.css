@@ -1,0 +1,27 @@
+#main {
+    text-align: center;
+    margin: auto;
+}
+h2 {
+    color: #808080;
+}
+.setting-area {
+    width: 870px;
+    color: #3a87ad;
+    border-color: #bce8f1;
+    background-color: #D7EEFF;
+    border: 1px solid #bce8f1;
+    padding: 30px;
+    margin: 20px auto;
+}
+
+.btn {
+    color: #ffffff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+    width: 60px;
+}
+.radio {
+    margin-right: 8px;
+}
+

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="./css/index.css" type="text/css"/>
+<title>CSV To Table</title>
+</head>
+<body >
+<script type="text/javascript" src="./js/csv_convert_table.js"></script>
+<div id="main">
+    <h2>CSV または Excel を HTML TABLE に変換</h2>
+    <div class="clearfix">
+        <form method="post" class="converter">
+            <div class="csv-area">
+                <div class="title">
+                    <label>CSV また Excel</label>
+                </div>
+            </div>
+            <textarea id="originCsv" name="originText" rows="10" cols=150 onclick="javascript:this.form.originText.innerHTML='';">
+            </textarea>
+
+                <div class="setting-area">
+                    <label>区切り符号:</label>
+
+                    <label class="radio inline">
+                        <input type="radio" id="comma" name="splitChar" value="," checked="checked" />&nbsp;,
+                    </label>
+
+                    <label class="radio inline">
+                        <input type="radio" id="quotecomma" name="splitChar" value='&quot;,&quot;' />&nbsp;&quot;,&quot;
+                    </label>
+
+                    <label class="radio inline">
+                        <input type="radio" id="tab" name="splitChar" value="&#009;" />TAB
+                    </label>
+
+                    <label class="radio inline">
+                        <input type="radio" id="quotetab" name="splitChar" value="&quot;&#009;&quot;" />&nbsp;&quot;TAB&quot;
+                    </label>
+
+                    <label class="radio inline">
+                        <input type="radio" id="verticalBar" name="splitChar" value="&#092;&#124;" />&nbsp;|
+                    </label>
+
+                    <label class="radio inline">
+                        <input type="radio" id="halfWidthSpace" name="splitChar" value=" " />&nbsp;半角スペース
+                    </label>
+                    <label class="radio inline">
+                        自定義: <input type="text" class="definition" id="definition" />
+                    </label>
+                    <button type="button" class="btn" onclick="csvToTable()" style="margin:0 10px;">変換</button>
+                </div>
+
+
+            <div class="bottomBar">
+                <div class="title">
+                    <label>変換結果</label>
+                </div>
+                <textarea id="newText" name="newText" rows="10" cols="150" onclick="javascript:this.form.newText.focus();this.form.newText.select();"></textarea>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+</body>
+</html>

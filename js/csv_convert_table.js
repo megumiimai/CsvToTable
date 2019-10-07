@@ -10,7 +10,7 @@ function csvToTable() {
         replaceChars.forEach(function (oldChar) {
             oldTextArr[i] = oldTextArr[i].replace(oldChar,"");
         });
-        oldTextArr[i] = "<tr><td>"+oldTextArr[i]+"</td></tr>";
+        oldTextArr[i] = "    <tr>\n        <td>" + oldTextArr[i] + "</td>\n    </tr>";
     }
 
     let splitChar = '	';
@@ -28,7 +28,7 @@ function csvToTable() {
 
     var newText = "";
     for(i = 0; i < oldTextArr.length; i++){
-        oldTextArr[i] = oldTextArr[i].replace(new RegExp(splitChar, "gi"), "</td><td>");
+        oldTextArr[i] = oldTextArr[i].replace(new RegExp(splitChar, "gi"), "</td>\n        <td>");
         newText = newText + oldTextArr[i] + "\n";
     }
     newText = "<table>\n"+newText+"</table>\n";

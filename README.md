@@ -7,3 +7,9 @@ CSV または Excel を HTML TABLE に変換
 HTML の <table> タグを使ってテーブルデータへ変換します。
 Github へ貼り付けすることで「表」として表示されます
 
+## Demo
+
+### Gighub 
+
+Github へ貼り付けすることで「表」として表示されます
+![result](https://github.com/megumiimai/CsvToTable/blob/master/sample/images/github_usage_example.gif)

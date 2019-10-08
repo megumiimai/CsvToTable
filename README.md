@@ -10,7 +10,7 @@ HTMLの `<table>` タグを使ってテーブルデータへ変換します。
 
 https://megumiimai.github.io/CsvToTable/
 
-## Demo
+## How To
 
 ### Gighub 
 

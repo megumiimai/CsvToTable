@@ -4,13 +4,15 @@ function csvToTable() {
         return false;
     }
 
+    const isHeaderRow = document.getElementById("headerRow").checked;
     const oldTextArr = originText.split("\n");
     const replaceChars = [ /\r/, /^\'/, /^\"/, /"$/, /'$/ ];
     for(i = 0; i < oldTextArr.length; i++){
         replaceChars.forEach(function (oldChar) {
             oldTextArr[i] = oldTextArr[i].replace(oldChar,"");
         });
-        oldTextArr[i] = "    <tr>\n        <td>" + oldTextArr[i] + "</td>\n    </tr>";
+        const replacement = isHeaderRow && i == 0 ? `<th>${oldTextArr[i]}</th>` :  `<td>${oldTextArr[i]}</td>`;
+        oldTextArr[i] = `  <tr>\n    ${replacement}\n  </tr>`;
     }
 
     let splitChar = '	';
@@ -28,7 +30,8 @@ function csvToTable() {
 
     var newText = "";
     for(i = 0; i < oldTextArr.length; i++){
-        oldTextArr[i] = oldTextArr[i].replace(new RegExp(splitChar, "gi"), "</td>\n        <td>");
+        const replacement = isHeaderRow && i == 0 ? "</th>\n    <th>" : "</td>\n    <td>";
+        oldTextArr[i] = oldTextArr[i].replace(new RegExp(splitChar, "gi"), replacement);
         newText = newText + oldTextArr[i] + "\n";
     }
     newText = "<table>\n"+newText+"</table>\n";

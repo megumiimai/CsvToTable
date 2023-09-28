@@ -22,35 +22,44 @@ ID,Parameter,Type,Length,Required,Default,Remark
 2,time_zone,String,max 20,No,サーバのタイムゾーン,ex:Asia/Tokyo</textarea>
 
                 <div class="setting-area">
-                    <label>区切り符号:</label>
+                    <div>
+                        <label>header行:</label>
+                        <label class="header-row inline">
+                            <input type="checkbox" id="headerRow" name="headerRow" value="," checked="checked" />
+                        </label>
 
-                    <label class="radio inline">
-                        <input type="radio" id="comma" name="splitChar" value="," checked="checked" />&nbsp;,
-                    </label>
+                        <label>区切り符号:</label>
 
-                    <label class="radio inline">
-                        <input type="radio" id="quotecomma" name="splitChar" value='&quot;,&quot;' />&nbsp;&quot;,&quot;
-                    </label>
+                        <label class="radio inline">
+                            <input type="radio" id="comma" name="splitChar" value="," checked="checked" />&nbsp;,
+                        </label>
 
-                    <label class="radio inline">
-                        <input type="radio" id="tab" name="splitChar" value="&#009;" />TAB
-                    </label>
+                        <label class="radio inline">
+                            <input type="radio" id="quotecomma" name="splitChar" value='&quot;,&quot;' />&nbsp;&quot;,&quot;
+                        </label>
 
-                    <label class="radio inline">
-                        <input type="radio" id="quotetab" name="splitChar" value="&quot;&#009;&quot;" />&nbsp;&quot;TAB&quot;
-                    </label>
+                        <label class="radio inline">
+                            <input type="radio" id="tab" name="splitChar" value="&#009;" />TAB
+                        </label>
 
-                    <label class="radio inline">
-                        <input type="radio" id="verticalBar" name="splitChar" value="&#092;&#124;" />&nbsp;|
-                    </label>
+                        <label class="radio inline">
+                            <input type="radio" id="quotetab" name="splitChar" value="&quot;&#009;&quot;" />&nbsp;&quot;TAB&quot;
+                        </label>
 
-                    <label class="radio inline">
-                        <input type="radio" id="halfWidthSpace" name="splitChar" value=" " />&nbsp;半角スペース
-                    </label>
-                    <label class="radio inline">
-                        自定義: <input type="text" class="definition" id="definition" />
-                    </label>
-                    <button type="button" class="btn" onclick="csvToTable()" style="margin:0 10px;">変換</button>
+                        <label class="radio inline">
+                            <input type="radio" id="verticalBar" name="splitChar" value="&#092;&#124;" />&nbsp;|
+                        </label>
+
+                        <label class="radio inline">
+                            <input type="radio" id="halfWidthSpace" name="splitChar" value=" " />&nbsp;半角スペース
+                        </label>
+                        <label class="radio inline">
+                            自定義: <input type="text" class="definition" id="definition" />
+                        </label>
+                    </div>
+                    <div>
+                        <button type="button" class="btn" onclick="csvToTable()" style="margin:0 10px;">変換</button>
+                    </div>
                 </div>
 
 
@@ -58,7 +67,7 @@ ID,Parameter,Type,Length,Required,Default,Remark
                 <div class="title">
                     <label>変換結果</label>
                 </div>
-                <textarea id="newText" name="newText" rows="20" cols="150" onclick="javascript:this.form.newText.focus();this.form.newText.select();"></textarea>
+                <textarea id="newText" name="newText" rows="15" cols="150" onclick="javascript:this.form.newText.focus();this.form.newText.select();"></textarea>
             </div>
         </form>
     </div>

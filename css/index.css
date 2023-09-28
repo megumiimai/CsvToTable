@@ -13,6 +13,7 @@ h2 {
     border: 1px solid #bce8f1;
     padding: 30px;
     margin: 20px auto;
+    line-height: 30px;
 }
 
 .btn {
@@ -24,4 +25,7 @@ h2 {
 .radio {
     margin-right: 8px;
 }
-
+.header-row {
+    border-right: 2px dotted #337ab7;
+    margin-right: 20px;
+}
